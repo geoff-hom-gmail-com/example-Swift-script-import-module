@@ -11,9 +11,9 @@ Example (dynamic library):
   2) Compile script: swiftc -I . -L . -lUtility1 main.swift -o example_dynamic
 
 Example (static library):
-  1) Make module: swiftc -emit-module Utility1.swift
-  2) Make object: swiftc -parse-as-library -c Utility1.swift
-  3) Make static library: ar rvs libUtility1_static.a Utility1.o
+  1) Make module: swiftc -emit-module Utility1.swift.
+  2) Make object: swiftc -parse-as-library -c Utility1.swift. (Makes Utility1.o.)
+  3) Make static library: ar rvs libUtility1_static.a Utility1.o. (Makes libUtility1_static.a.)
   4) Compile script: swiftc -I . -L . -lUtility1_static main.swift -o example_static
 
 Issues: If using the dynamic library, then the library must be in the same directory as where you call the script from. In theory, one could fix this with something like swiftc -Xlinker -rpath -Xlinker @executable_path/, but I couldn't get it to work. Also, this requires the library to be included.
