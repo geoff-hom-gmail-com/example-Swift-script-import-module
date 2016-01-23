@@ -18,7 +18,7 @@ Example (static library):
   3) Make static library: ar rvs libUtility1_static.a Utility1.o. (Makes libUtility1_static.a.)
   4) Compile script: swiftc -I . -L . -lUtility1_static main.swift -o example_static
 
-Static library: To update: Do at least steps 2 and 3.
+Static library: To update: Do at least steps 1–3.
 */
 
 import Foundation
